@@ -28,7 +28,7 @@ Power BI (Analytics Dashboard)
 
 MBTA Open Transit API (Data Source)
 
-🗂 Lakehouse Design
+🗂 **Lakehouse Design**
 Bronze Layer – Raw Ingestion
 
 Table: bronze_fleet_data
@@ -79,7 +79,7 @@ gold_fleet_status_snapshot – Current telemetry snapshot
 
 These tables are structured for analytical workloads and Power BI consumption.
 
-🚀 End-to-End Workflow
+🚀 **End-to-End Workflow**
 
 Python script ingests vehicle data from public API
 
@@ -93,7 +93,7 @@ Aggregations and KPI modeling create Gold layer
 
 Power BI connects directly to Lakehouse for analytics
 
-📊 Analytics Layer
+📊 **Analytics Layer**
 
 Power BI dashboard provides:
 
@@ -109,7 +109,7 @@ Daily operational trends
 
 Designed for near real-time monitoring and decision support.
 
-🧠 Engineering Concepts Demonstrated
+🧠 **Engineering Concepts Demonstrated**
 
 Medallion Architecture (Bronze → Silver → Gold)
 
@@ -127,7 +127,7 @@ KPI-driven aggregation modeling
 
 Lakehouse-based analytics integration
 
-🔮 Future Enhancements
+🔮 **Future Enhancements**
 
 Real-time streaming ingestion
 
@@ -139,7 +139,7 @@ Partition optimization
 
 ML-based driver behavior scoring
 
-📌 Key Takeaways
+📌 **Key Takeaways**
 
 This project demonstrates hands-on implementation of a scalable Lakehouse data platform using Microsoft Fabric and modern data engineering practices.
 

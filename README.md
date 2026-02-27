@@ -1,74 +1,154 @@
-# Fleet-Management-Analytics-Project-with-Microsoft-Fabric
-A complete real-time **Fleet Monitoring Solution** using **Microsoft Fabric**, open APIs, enriched telemetry, Delta Lakehouse architecture, and **Power BI** dashboards. Designed with scalability, alerting, and business intelligence in mind.
+**Fleet Management Analytics Platform – Microsoft Fabric Lakehouse**
 
-## 📌 Project Overview
+A scalable Lakehouse-based fleet analytics platform built using Microsoft Fabric, Delta Lake, PySpark, and Power BI.
+This project simulates real-time fleet monitoring by ingesting public transit data and enriching it with operational telemetry for analytics and KPI reporting.
 
-This project demonstrates how to build a modern data platform from API to dashboard using **Microsoft Fabric (Trial)**. It simulates a real-world use case of monitoring vehicles using enriched data (e.g., fuel level, engine temp, location congestion) and generating insights via the **Lakehouse** architecture.
+📌 **Architecture Overview**
 
----
+This solution demonstrates how to design a modern cloud data platform from API ingestion to business-ready analytics using Medallion Architecture (Bronze → Silver → Gold).
 
-## 🔧 Tech Stack
+The system processes vehicle data, applies transformation logic, and produces analytics-ready tables optimized for reporting and decision-making.
 
-- **Microsoft Fabric**: Lakehouse, Notebooks, Eventstream (planned), Pipelines  
-- **Power BI**: Dashboard, KPI Cards
-- **Python**: Data ingestion + enrichment  
-- **PySpark**: Silver layer transformation  
-- **Delta Table**: Bronze → Silver → Gold  
-- **APIs**: MBTA Open Transit Feed
-
----
-
-## 🗂️ Lakehouse Structure
-
-| Layer | Table Name | Description |
-|-------|------------|-------------|
-| Bronze | `bronze_fleet_data` | Raw enriched API data |
-| Silver | `silver_fleet_data` | Cleaned, typed, and normalized |
-| Gold | `gold_vehicle_summary` | KPIs per vehicle |
-|       | `gold_driver_summary` | Driver efficiency and incidents |
-|       | `gold_location_congestion` | Location-based congestion metrics |
-|       | `gold_daily_health_summary` | Day-wise trends of fleet health |
-|       | `gold_fleet_status_snapshot` | Current location + telemetry for all vehicles |
+<img width="1024" height="1536" alt="Fleet Management Analytics_diagram" src="https://github.com/user-attachments/assets/c5905a6e-9de4-4532-897f-3cf7d64f43c1" />
 
 
----
+🛠 **Tech Stack**
 
-## 🚀 How It Works
+Microsoft Fabric (Lakehouse, Notebooks)
 
-1. **Ingest API Data**: Python script fetches MBTA vehicle data and adds fake telemetry (fuel, temp, etc.)
-2. **Bronze Layer**: Enriched data saved as a Delta table
-3. **Silver Layer**: PySpark transformations (data typing, cleaning)
-4. **Gold Layer**: Aggregated + derived tables for reporting
-5. **Power BI**: Connected directly to Lakehouse for reporting
-6. *(Optional)*: Stream into Eventstream + Activator for alert automation
----
+Delta Lake (Medallion Architecture)
 
-## 🧠 Future Enhancements
+PySpark (Data Transformation)
 
-- Azure Event Hub Integration  
-- Fabric Activator for real-time alerting  
-- Predictive maintenance (ML integration)  
-- Email/SMS alerting for critical flags  
-- Driver behavior analysis over time
+Spark SQL
 
----
+Python (API ingestion & enrichment)
 
-## 🙌 Credits
+Power BI (Analytics Dashboard)
 
-Built using **public APIs**, simulated telemetry, and **Microsoft Fabric** capabilities.
+MBTA Open Transit API (Data Source)
 
-📬 Feel free to fork, explore, or contribute!
+🗂 Lakehouse Design
+Bronze Layer – Raw Ingestion
 
----
+Table: bronze_fleet_data
 
-## 🔗 Let's Connect
+Ingests vehicle location data from MBTA API
 
-💼 [LinkedIn] - https://www.linkedin.com/in/vino-r-mt/ 
-💻 [More Projects] - https://github.com/Vinothkgit/water-quality-monitoring-End-to-End-Microsoft-Fabric-Data-Engineering-Project-
+Enriched with simulated telemetry:
 
----
+Fuel level
 
-#fabric #powerbi #dataengineering #iot #analytics #openapi #fleetmanagement #microsoftfabric
+Engine temperature
 
+Driver ID
 
+Congestion indicator
 
+Stored as Delta table
+
+Minimal transformation applied
+
+Silver Layer – Clean & Structured
+
+Table: silver_fleet_data
+
+Data typing and schema enforcement
+
+Null handling and field normalization
+
+Standardized timestamp formats
+
+Data quality checks implemented
+
+Transformation logic applied using PySpark
+
+Gold Layer – Analytics & KPI Modeling
+
+Optimized, business-ready tables created for reporting:
+
+gold_vehicle_summary – KPIs per vehicle
+
+gold_driver_summary – Driver performance & incident tracking
+
+gold_location_congestion – Congestion metrics by area
+
+gold_daily_health_summary – Daily fleet operational trends
+
+gold_fleet_status_snapshot – Current telemetry snapshot
+
+These tables are structured for analytical workloads and Power BI consumption.
+
+🚀 End-to-End Workflow
+
+Python script ingests vehicle data from public API
+
+Data enriched with operational telemetry fields
+
+Stored in Bronze Delta table
+
+PySpark transformations produce Silver layer
+
+Aggregations and KPI modeling create Gold layer
+
+Power BI connects directly to Lakehouse for analytics
+
+📊 Analytics Layer
+
+Power BI dashboard provides:
+
+Vehicle performance metrics
+
+Fleet health indicators
+
+Congestion heat mapping
+
+Driver efficiency analysis
+
+Daily operational trends
+
+Designed for near real-time monitoring and decision support.
+
+🧠 Engineering Concepts Demonstrated
+
+Medallion Architecture (Bronze → Silver → Gold)
+
+Delta Lake data modeling
+
+API ingestion with Python
+
+Schema validation and normalization
+
+Incremental processing concepts
+
+Data quality validation
+
+KPI-driven aggregation modeling
+
+Lakehouse-based analytics integration
+
+🔮 Future Enhancements
+
+Real-time streaming ingestion
+
+Event-driven alerting
+
+Predictive maintenance modeling
+
+Partition optimization
+
+ML-based driver behavior scoring
+
+📌 Key Takeaways
+
+This project demonstrates hands-on implementation of a scalable Lakehouse data platform using Microsoft Fabric and modern data engineering practices.
+
+It highlights practical experience in:
+
+ETL design
+
+Data transformation using PySpark
+
+Analytics modeling
+
+Cloud-based data architecture
